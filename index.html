@@ -438,29 +438,30 @@
                     </header>
 
                     {/* Hero Section */}
-                    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+                    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
                         <div 
                             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                             style={{
                                 backgroundImage: `url('https://customer-assets.emergentagent.com/job_756c4ad0-099e-44ee-9a8d-c6cbf0b2fbe4/artifacts/nbc48wab_1.Twx1Gba54-VDrmHoZ0g3f6S65e_BOvVnzLrh4cmw6ec.webp')`
                             }}
                         >
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-900/70 to-transparent"></div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-900/55 to-blue-800/30"></div>
                         </div>
 
                         <div className="container mx-auto px-4 relative z-10">
                             <div className="max-w-4xl">
-                                <div className="mb-8 animate-fade-in">
-                                    <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden drop-shadow-2xl animate-float">
+                                <div className="mb-6 animate-fade-in">
+                                    <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-48 md:h-48 rounded-full overflow-hidden drop-shadow-2xl animate-float border-4 border-yellow-400">
                                         <img 
                                             src="https://customer-assets.emergentagent.com/job_756c4ad0-099e-44ee-9a8d-c6cbf0b2fbe4/artifacts/o2qhe7g7_1.rjb31ba6FN_BcoDZp9vCRiZ2BNln9gTdS1QA3UFiAA.webp"
                                             alt="Логотип"
                                             className="w-full h-full object-cover"
+                                            onError={(e) => { e.target.src='https://customer-assets.emergentagent.com/job_8ad63734-8155-43ec-a69a-c0a59db28263/artifacts/e650gfs5_1.rjb31ba6FN_BcoDZp9vCRiZ2BNln9gTdS1QA3UFiAA.webp'; }}
                                         />
                                     </div>
                                 </div>
 
-                                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 animate-slide-up tracking-tight">
+                                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black text-white mb-4 animate-slide-up tracking-tight leading-tight">
                                     ГРУЗОПЕРЕВОЗКИ
                                 </h1>
                                 
