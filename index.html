@@ -117,6 +117,72 @@
   }
 }
 @media(min-width:768px){#dm-mobn{display:none!important}}
+
+/* ===== DESKTOP: ограничение ширины + красивый логотип ===== */
+@media(min-width:768px){
+
+  /* Тёмный фон за пределами контейнера (виден на широких мониторах) */
+  html{background:#0a0a0a}
+
+  /* Контейнер сайта — не растягивается шире 1440px */
+  body{
+    max-width:1440px;
+    margin:0 auto;
+    overflow-x:hidden;
+    box-shadow:0 0 80px rgba(0,0,0,.7);
+  }
+
+  /* Фиксированный навбар — тоже ограничен 1440px и центрирован */
+  [data-testid="navbar"]{
+    max-width:1440px!important;
+    left:50%!important;
+    right:auto!important;
+    width:100%!important;
+    transform:translateX(-50%)!important;
+  }
+
+  /* ===== ЛОГОТИП НАВБАРА ===== */
+  /* Скрываем текущий разделитель "|" и мелкий текст "Грузоперевозки" */
+  [data-testid="nav-logo"] ~ span{
+    display:none!important;
+  }
+
+  /* "ДМИТРИЙ" — делаем визуально как mini-brand-badge */
+  [data-testid="nav-logo"]{
+    font-size:1rem!important;
+    letter-spacing:.22em!important;
+    font-weight:900!important;
+    background:linear-gradient(90deg,#e67e22,#f39c12)!important;
+    -webkit-background-clip:text!important;
+    -webkit-text-fill-color:transparent!important;
+    background-clip:text!important;
+    text-shadow:none!important;
+    position:relative;
+  }
+  /* Оранжевая полоска-акцент снизу логотипа */
+  [data-testid="nav-logo"]::after{
+    content:'';
+    position:absolute;
+    bottom:-3px;left:0;right:0;
+    height:2px;
+    background:linear-gradient(90deg,#e67e22,transparent);
+    border-radius:2px;
+  }
+  /* Добавляем тег "ГРУЗОПЕРЕВОЗКИ" как subtitle через before на контейнер лого */
+  [data-testid="nav-logo"]::before{
+    content:'ГРУЗОПЕРЕВОЗКИ';
+    display:block;
+    font-size:.5rem;
+    font-weight:700;
+    letter-spacing:.35em;
+    -webkit-text-fill-color:rgba(255,255,255,.4);
+    background:none;
+    -webkit-background-clip:unset;
+    background-clip:unset;
+    line-height:1;
+    margin-bottom:1px;
+  }
+}
 </style>
 <div id="dm-mobn"></div>
 <script>
