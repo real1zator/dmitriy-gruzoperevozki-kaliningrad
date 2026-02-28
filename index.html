@@ -157,10 +157,16 @@ body{background:#09090b;color:#fafafa;font-family:'Manrope',sans-serif;-webkit-f
   </div>
 </section>
 <script>
-window.addEventListener('scroll',function(){
-  var y=window.scrollY*0.35;
-  document.querySelector('.hero-bg').style.transform='translateY('+y+'px)';
-},{passive:true});
+// Parallax — только на десктопе, y не меньше 0
+(function(){
+  if(window.innerWidth < 768) return;
+  var bg = document.querySelector('.hero-bg');
+  if(!bg) return;
+  window.addEventListener('scroll',function(){
+    var y = Math.max(0, window.scrollY * 0.35);
+    bg.style.transform = 'translateY(' + y + 'px)';
+  },{passive:true});
+})();
 </script>
 
 <section id="performer-data" class="performer-wrap">
