@@ -77,12 +77,18 @@ body{background:#09090b;color:#fafafa;font-family:'Manrope',sans-serif;-webkit-f
 .perf-desc{white-space:pre-line;color:#d4d4d8;font-size:.93rem;line-height:1.6}
 .perf-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
 .perf-gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid rgba(63,63,70,.8)}
-/* авто-фото */
-.perf-auto-photo-wrap{background:#0d0d0f;border-radius:12px;overflow:hidden;margin-bottom:1.25rem;border:1px solid rgba(251,191,36,.18);display:flex;align-items:center;justify-content:center}
-.perf-auto-photo{width:100%;max-height:320px;object-fit:contain;display:block}
-/* двухколоночная сетка под фото */
+/* авто — двухколоночный layout: фото | инфо */
+.perf-auto-layout{display:grid;grid-template-columns:1fr;gap:1.25rem}
+.perf-photo-col{order:0}
+.perf-info-col{order:1}
+.perf-auto-photo{width:100%;height:280px;object-fit:cover;border-radius:12px;border:1px solid rgba(251,191,36,.2);display:block;box-shadow:0 4px 20px rgba(0,0,0,.5)}
+/* двухколоночная сетка информации */
 .perf-auto-body{display:grid;grid-template-columns:1fr;gap:1.25rem}
-@media(min-width:700px){.perf-auto-body{grid-template-columns:1fr 1fr}}
+@media(min-width:700px){
+  .perf-auto-layout{grid-template-columns:1fr 1fr;align-items:start}
+  .perf-auto-photo{height:100%;min-height:360px}
+  .perf-auto-body{grid-template-columns:1fr}
+}
 @media(min-width:900px){.perf-gallery{grid-template-columns:repeat(4,minmax(0,1fr))}}
 </style>
 
@@ -166,12 +172,14 @@ window.addEventListener('scroll',function(){
       Наш авто
     </div>
 
-    <!-- Фото — полностью в рамке (contain) -->
-    <div class="perf-auto-photo-wrap">
-      <img class="perf-auto-photo" src="1._MpvM7a4UCNZhNIuGzzYrmmRUiXRktI1WZ9SId-aWCnZ.webp" alt="Наш авто"/>
-    </div>
-
-    <!-- Характеристики + Описание -->
+    <!-- Двухколоночный layout: фото | инфо -->
+    <div class="perf-auto-layout">
+      <!-- Фото (первым на мобиле, слева на десктопе) -->
+      <div class="perf-photo-col">
+        <img class="perf-auto-photo" src="1._MpvM7a4UCNZhNIuGzzYrmmRUiXRktI1WZ9SId-aWCnZ.webp" alt="Наш авто"/>
+      </div>
+      <!-- Характеристики + Расположение + Описание -->
+      <div class="perf-info-col">
     <div class="perf-auto-body">
       <div>
         <div class="perf-subtitle">⚙️ Характеристики</div>
@@ -213,6 +221,9 @@ window.addEventListener('scroll',function(){
 ✅ Повторно — скидка</div>
       </div>
     </div>
+    </div><!-- /perf-auto-body -->
+      </div><!-- /perf-info-col -->
+    </div><!-- /perf-auto-layout -->
   </div>
 
   <!-- Примеры работ -->
