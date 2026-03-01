@@ -49,10 +49,13 @@ body{background:#09090b;color:#fafafa;font-family:'Manrope',sans-serif;-webkit-f
 .btn-outline:hover{background:rgba(251,191,36,.1);border-color:#fbbf24;transform:translateY(-2px)}
 .btns{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.25rem}
 
+/* Title pill box */
+.hero-title-box{display:inline-block;border:2px solid rgba(251,191,36,.28);border-radius:1.75rem;padding:1rem 1.5rem;backdrop-filter:blur(12px);background:rgba(0,0,0,.2);margin-bottom:1.25rem}
+
 /* Trust */
-.trust{display:flex;flex-wrap:wrap;gap:1.5rem .75rem}
-.trust-item{display:flex;align-items:center;gap:.5rem}
-.trust-icon{width:15px;height:15px;color:#dc2626;flex-shrink:0}
+.trust{display:flex;flex-wrap:wrap;gap:.5rem}
+.trust-item{display:inline-flex;align-items:center;gap:.4rem;border:1px solid rgba(63,63,70,.65);border-radius:9999px;padding:.375rem .875rem;background:rgba(39,39,42,.55);backdrop-filter:blur(8px)}
+.trust-icon{width:13px;height:13px;color:#dc2626;flex-shrink:0}
 
 /* Scroll */
 .scroll-ind{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;animation:scroll-down 1.6s ease-in-out infinite}
@@ -117,9 +120,11 @@ body{background:#09090b;color:#fafafa;font-family:'Manrope',sans-serif;-webkit-f
         <a href="https://www.avito.ru/kaliningrad/predlozheniya_uslug/gruzoperevozki_pereezdy_gruzchiki_3581042656" target="_blank" rel="noopener" style="color:#dc2626;font-size:.875rem;font-weight:600;display:flex;align-items:center;gap:4px;text-decoration:none">Авито <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
       </div>
 
-      <h1 class="font-playfair" style="font-size:clamp(2.6rem,6vw,5rem);line-height:1.1;font-weight:700;color:#fff;margin-bottom:1.25rem">
-        Грузоперевозки<br><span class="gradient-accent">в Калининграде</span>
-      </h1>
+      <div class="hero-title-box">
+        <h1 class="font-playfair" style="font-size:clamp(2.6rem,6vw,5rem);line-height:1.1;font-weight:700;color:#fff;margin:0">
+          Грузоперевозки<br><span class="gradient-accent">в Калининграде</span>
+        </h1>
+      </div>
 
       <p style="color:#d4d4d8;font-size:1.125rem;max-width:520px;line-height:1.65;margin-bottom:1.5rem">
         Частник, без посредников. <span style="color:#fbbf24;font-weight:600">Опыт 7+ лет</span>. Перевозки по городу и области, разборка/сборка мебели, фиксированная цена.
@@ -382,7 +387,7 @@ a[data-testid="avito-reviews-link"]::before {
     logos.forEach(function(el) {
       var nameSpan = el.querySelector('span:first-child');
       if (nameSpan) {
-        nameSpan.textContent = 'Дмитрий';
+        nameSpan.textContent = 'Грузоперевозки';
         nameSpan.className = 'custom-owner-name';
       }
     });
@@ -390,7 +395,7 @@ a[data-testid="avito-reviews-link"]::before {
       if (el.children && el.children.length >= 2) {
         var first = el.children[0];
         if (first && first.tagName === 'DIV' && first.textContent.trim() === '') {
-          first.textContent = 'Дмитрий';
+          first.textContent = 'Грузоперевозки';
           first.className = 'custom-owner-name';
         }
       }
