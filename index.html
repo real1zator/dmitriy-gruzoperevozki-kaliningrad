@@ -26,7 +26,7 @@
 .cover-img-section{width:100%;line-height:0;overflow:hidden;position:relative}
 .cover-img-section img{width:100%;height:auto;max-height:90vh;object-fit:cover;object-position:center;display:block}
 .cover-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,#09090b 100%);pointer-events:none}
-</style>
+.hero-overlay-1{background:linear-gradient(135deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.38) 100%)}.hero-overlay-2{background:linear-gradient(to right,rgba(0,0,0,.78) 0%,rgba(0,0,0,.42) 55%,rgba(0,0,0,.08) 100%)}.hero{min-height:100vh;position:relative;display:flex;align-items:center}</style>
 
 <!-- COVER FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -39,10 +39,10 @@ body{background:#09090b;color:#fafafa;font-family:'Manrope',sans-serif;-webkit-f
 .font-playfair{font-family:'Playfair Display',Georgia,serif}
 
 /* Hero */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;top:-15%;height:130%;will-change:transform}
-.hero-overlay-1{position:absolute;inset:0;background:linear-gradient(to right,rgba(9,9,11,.97) 0%,rgba(9,9,11,.88) 45%,rgba(9,9,11,.4) 100%)}
-.hero-overlay-2{position:absolute;inset:0;background:linear-gradient(to top,rgba(9,9,11,.8) 0%,transparent 50%)}
+
+
 .hero-content{position:relative;z-index:10;max-width:80rem;margin:0 auto;padding:6rem 1rem 5rem;width:100%}
 .hero-inner{max-width:48rem}
 
@@ -120,9 +120,9 @@ body{background:#09090b;color:#fafafa;font-family:'Manrope',sans-serif;-webkit-f
 </head><body>
 <!-- COVER HERO -->
 <section class="hero">
-  <div class="hero-bg" style="background:#09090b"></div>
+  <div class="hero-bg" style="background-image:url('hero.jpg');background-size:cover;background-position:center"></div>
   <div class="hero-overlay-1"></div>
-  <div class="hero-overlay-2" style="background:linear-gradient(to right,rgba(0,0,0,.82) 0%,rgba(0,0,0,.55) 55%,rgba(0,0,0,.18) 100%)"></div>
+  <div class="hero-overlay-2"></div>
   <div class="blob" style="top:25%;right:33%;width:20rem;height:20rem;background:radial-gradient(circle,rgba(220,38,38,.06),transparent 70%)"></div>
   <div class="blob" style="bottom:33%;right:25%;width:16rem;height:16rem;background:radial-gradient(circle,rgba(251,191,36,.05),transparent 70%);animation-delay:1.5s"></div>
 
